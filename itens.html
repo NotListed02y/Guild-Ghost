@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="styleitens.css">
+    <title>Pedido Item</title>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="center">
+                <img id="logo" src="logo alterada.png" alt="logo">
+            </a>
+        </nav>
+        <form id="ghostForm" method="get" action="https://script.google.com/macros/s/AKfycbyf0MjcUT0-gh0HObTMw7mXj5v_6t30pjhUJJ5WUy0R2xhuQsUDgVV8jmdPfPBKA8TN/exec" name="formulario-ghost">
+            <h2>Peça o Item:</h2>
+            <input type="text" name="nickname" placeholder="Nickname" required>
+            <input type="number" name="quantidade" min="1" max="999999999" placeholder="Quantidade" required>
+            Classe: 
+            <select name="classe" id="classe" required>
+                <option value="zerk">Berzerker</option>
+                <option value="pala">Paladino</option>
+                <option value="ranger">Ranger</option>
+                <option value="sinx">Assassino</option>
+                <option value="cleric">Clérigo</option>
+                <option value="sage">Sábio</option>
+                <option value="feit">Feiticeiro</option>
+                <option value="necro">Necromante</option>
+            </select>
+            <textarea name="mensagem" id="motivo" rows="7" placeholder="Para quê seria o item" required></textarea>
+            <input type="submit" value="Enviar" id="enviar">
+        </form>
+    </div>
+    <script>
+        document.getElementById('ghostForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Previne o envio padrão do formulário
+            var formData = new FormData(this);
+            
+            fetch(this.action, {
+                method: 'POST',
+                body: formData
+            }).then(response => response.text())
+            .then(text => {
+                alert(text); // Mostra a mensagem de sucesso
+                this.reset(); // Reseta o formulário
+            }).catch(error => {
+                console.error('Erro:', error);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(Banner_Ghost.jpg);
+    background-repeat: no-repeat;
+    @media (min-width: 600px) {
+
+}}
+.container {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+}
+nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+#logo {
+    width: 150px;
+}
+form h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+input[type="text"],
+input[type="number"],
+select,
+textarea,
+input[type="submit"],
+input[type="button"] {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+input[type="submit"],
+input[type="button"] {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+input[type="submit"]:hover,
+input[type="button"]:hover {
+    background-color: #555;
+}
+select {
+    height: 2.5rem;
+}
+textarea {
+    resize: vertical;
+}
+#discord {
+    background-color: #7289da;
+    margin-top: -0.5rem;
+}
+#discord:hover {
+    background-color: #5a6fb2;
+}
+@media (max-width: 600px) {
+    .container {
+        padding: 1rem;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    select,
+    textarea,
+    input[type="submit"],
+    input[type="button"] {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }}

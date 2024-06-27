@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url(Banner_Ghost.jpg);
+    background-repeat: no-repeat;
+    @media (min-width: 600px) {
+
+}}
+header {
+    padding: 1rem;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+}
+ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+ul li {
+    margin: 0 1rem;
+}
+#logo {
+    width: 150px;
+}
+nav ul {
+    justify-content: center;
+    flex-grow: 1;
+}
+.center {
+    margin-left: 0px;
+}
+a:hover {
+    background-color: #414141;
+}

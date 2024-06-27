@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="styleregistro.css">
+    <title>Registro Ghost</title>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="center">
+                <img id="logo" src="logo alterada.png" alt="logo">
+            </a>
+        </nav>
+        <form id="ghostForm" method="post" action="https://script.google.com/macros/s/AKfycbwHKyGTghbcFK4VPp_668VaOP2TThe-_3ivQ4d4ZHfVkQLAXYqcrQ0l_EhSko2utYOa/exec" name="formulario-ghost">
+            <h2>Registro Ghost</h2>
+            <input type="text" name="nickname" placeholder="Nickname" required>
+            <input type="number" name="idade" min="16" max="100" placeholder="Idade" required>
+            Classe: 
+            <select name="classe" id="classe" required>
+                <option value="zerk">Berzerker</option>
+                <option value="pala">Paladino</option>
+                <option value="ranger">Ranger</option>
+                <option value="sinx">Assassino</option>
+                <option value="cleric">Clérigo</option>
+                <option value="sage">Sábio</option>
+                <option value="feit">Feiticeiro</option>
+                <option value="necro">Necromante</option>
+            </select>
+            <textarea name="mensagem" id="motivo" rows="7" placeholder="Coloque seus objetivos aqui" required></textarea>
+            <input type="submit" value="Enviar" id="enviar">
+            <input type="button" id="discord" value="Discord" onclick="window.location.href='https://discord.com/invite/fujXerGfeS'">
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('ghostForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Previne o envio padrão do formulário
+            var formData = new FormData(this);
+            
+            fetch(this.action, {
+                method: 'POST',
+                body: formData
+            }).then(response => response.text())
+            .then(text => {
+                alert(text); // Mostra a mensagem de sucesso
+                this.reset(); // Reseta o formulário
+            }).catch(error => {
+                console.error('Erro:', error);
+            });
+        });
+    </script>
+</body>
+</html>
